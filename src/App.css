@@ -1,0 +1,85 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/***************** My css ***********************************/
+.colorPallets{
+  /* border: 2px solid red; */
+  width: 200px;
+  height: 40px;
+  margin-right: 15px;
+  display: flex;
+
+}
+.color-box{
+  border: 2px solid rgb(204, 204, 204);
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  margin: 2px;
+  transition: tranform 0.2s ease-in-out;
+}  
+.color-box:hover{
+  transform: scale(1.1);
+  /* border: 3px solid rgb(255, 255, 255); */
+  cursor: pointer;
+}
+.black{
+  border: 2px solid rgb(66, 66, 66);
+   background-color: black;
+}
+.blue{
+  border: 2px solid rgb(84, 92, 158);
+  background-color: rgb(1, 11, 97);
+}
+.red{
+  border: 2px solid rgb(176, 128, 128);
+  background-color: rgb(98, 0, 0);
+}
+.green{
+  border: 2px solid rgb(118, 170, 130);
+  background-color: rgb(2, 105, 26);
+}
+.white{
+  border: 2px solid rgb(161, 161, 161);
+  background-color: white;
+}
+.color{
+  background-color: rgb(4, 25, 9);
+  background-color: rgb(28, 3, 3);
+  background-color: rgb(220, 220, 220);
+}
