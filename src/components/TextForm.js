@@ -6,57 +6,48 @@ export default function Form(props) {
     setText(event.target.value)
   }
   const textSummary = () => {
-    let wordCount = text.split(" ").length;
-    let charCount = text.length;
+    let wordCount = text.split(/\s+/g).filter((element)=>{return element.length !== 0}).length;
+    let charCount = text.replace(/\s/g, "").length;
     let sentenceCount = text.split(".").filter((sentence) => sentence.trim() !== "").length;
-  
-    if (text === "") {
-      wordCount = 0;
-      charCount = 0;
-      sentenceCount = 0;
-    }
-  
+
     return `${wordCount} words and ${charCount} characters and ${sentenceCount} sentences`;
   };
   
   const uppercase =()=>{
     let newText=text.toUpperCase();
     setText(newText);
-    if(text !== ""){
     props.showAlert("Converted to Upper Case successfully!", "primary")
-    }
-    else{
-      props.showAlert("Sorry you have not entered any text!", "danger")
-    }
   }
   const lowercase =()=>{
     let newText=text.toLowerCase();
     setText(newText);
-    if(text!== ""){
-      props.showAlert("Converted to Lower Case successfully!", "primary")
-      }
-      else{
-        props.showAlert("Sorry you have not entered any text!", "danger")
-      }
-  }
+     props.showAlert("Converted to Lower Case successfully!", "primary")
+ }
+ const capitalizeFirst = () => {
+  let words = text.split(" ");
+  let newText = words.map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+  setText(newText);
+  props.showAlert("First Letter Capitalized successfully!", "primary");
+}
+  const removeSpaces=()=>{
+    let newText=text.replace(/\s+/g," ").trim();
+    setText(newText);
+     props.showAlert("Extra spaces removed successfully!", "primary")
+ }
   const copyText =()=>{
     const text = document.getElementById("textArea");
     text.select();
     navigator.clipboard.writeText(text.value);
-        props.showAlert("Copied to clipboard succesfully!", "primary")
+    document.getSelection().removeAllRanges();
+        props.showAlert("Copied to clipboard succesfully!", "warning")
     
   }
   const clearText =()=>{
     let newText="";
     setText(newText);
-    if(text!==""){
-      props.showAlert("Text cleared succesfully!", "warning")
-      }
-      else{
-        props.showAlert("Nothing to clear in text box!", "danger")
-      }
+      props.showAlert("Text cleared succesfully!", "danger")
+  
   }
-
    return (
 <>
 <div className="container" style={{color: props.mode ==='dark'?'white':'black'}}>        
@@ -67,19 +58,26 @@ export default function Form(props) {
           rows="7" style={{backgroundColor: props.mode ==='dark'?'rgb(220, 220, 220)':'white'}}
         />
       </div>
-        <button className="btn btn-primary mx-1" onClick={uppercase}>Convert to UpperCase</button>
-          <button className="btn btn-primary mx-1" onClick={lowercase}>Convert to LowerCase</button>
-          <button className="btn btn-primary mx-1 my-1" onClick={copyText}>Copy Text</button> 
-          <button className="btn btn-primary mx-1 my-1" onClick={clearText}>Clear</button>
+        <button className="btn btn-primary mx-1" onClick={uppercase} disabled={text.length===0}>Convert to UpperCase</button>
+
+          <button className="btn btn-primary mx-1" onClick={lowercase} disabled={text.length===0}>Convert to LowerCase</button>
+
+          <button className="btn btn-primary mx-1" onClick={capitalizeFirst} disabled={text.length===0}>Capitalize First Letter</button>
+
+          <button className="btn btn-primary mx-1 my-1" onClick={removeSpaces} disabled={text.length===0}>Remove Extra Spaces</button>
+
+          <button className="btn btn-primary mx-1 my-1" onClick={copyText} disabled={text.length===0}>Copy Text</button> 
+
+          <button className="btn btn-primary mx-1 my-1" onClick={clearText} disabled={text.length===0}>Clear</button>
            
       </div>
       <div className="container my-3" style={{color: props.mode === 'dark'?'white':'black'}}>
         <h2>Your text summary</h2>
         <p>{textSummary()}</p>
         
-        <p>{Math.round((text.split(" ").length)*0.01) + " Minutes Read"} </p>
+        <p>{((text.split(" ").filter((element)=>{return element.length !== 0}).length)*0.01) + " Minutes Read"} </p>
         <h3>Preview</h3>
-        <p>{text}</p>
+        <p>{text ===""?'Nothing to preview': text}</p>
       </div>
       </>   
   );

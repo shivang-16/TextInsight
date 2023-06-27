@@ -49,12 +49,12 @@ function App() {
 
   return (
     <>
-     <Navbar title="TextInsight" home="About Us" mode={mode} darkMode ={darkMode} lightMode ={lightMode} blueMode ={blueMode} redMode ={redMode} greenMode ={greenMode}/>
+     <Navbar title="TextInsight" home="About" mode={mode} darkMode ={darkMode} lightMode ={lightMode} blueMode ={blueMode} redMode ={redMode} greenMode ={greenMode}/>
     
      <Alert alert={alert}/>
 
      <div className='container my-5' >
-     <Form title = "Enter the text here to see magic" mode={mode} showAlert={showAlert}/>
+     <Form title = "TextInsight-Your Ultimate Text Utility Hub!" mode={mode} showAlert={showAlert}/>
      </div>
      
     {/* <About/> */}

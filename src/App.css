@@ -1,49 +1,13 @@
-.App {
-  text-align: center;
+body{
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-/***************** My css ***********************************/
 .colorPallets{
-  /* border: 2px solid red; */
   width: 200px;
   height: 40px;
-  margin-right: 15px;
   display: flex;
-
+  margin: 0px -15px 0px 0px;
+  padding: 3px;
 }
 .color-box{
   border: 2px solid rgb(204, 204, 204);
@@ -55,7 +19,6 @@
 }  
 .color-box:hover{
   transform: scale(1.1);
-  /* border: 3px solid rgb(255, 255, 255); */
   cursor: pointer;
 }
 .black{
@@ -77,9 +40,4 @@
 .white{
   border: 2px solid rgb(161, 161, 161);
   background-color: white;
-}
-.color{
-  background-color: rgb(4, 25, 9);
-  background-color: rgb(28, 3, 3);
-  background-color: rgb(220, 220, 220);
 }
