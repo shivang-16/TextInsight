@@ -58,11 +58,11 @@ export default function Form(props) {
           rows="7" style={{backgroundColor: props.mode ==='dark'?'rgb(220, 220, 220)':'white'}}
         />
       </div>
-        <button className="btn btn-primary mx-1" onClick={uppercase} disabled={text.length===0}>Convert to UpperCase</button>
+        <button className="btn btn-primary mx-1 my-1" onClick={uppercase} disabled={text.length===0}>Convert to UpperCase</button>
 
-          <button className="btn btn-primary mx-1" onClick={lowercase} disabled={text.length===0}>Convert to LowerCase</button>
+          <button className="btn btn-primary mx-1 my-1" onClick={lowercase} disabled={text.length===0}>Convert to LowerCase</button>
 
-          <button className="btn btn-primary mx-1" onClick={capitalizeFirst} disabled={text.length===0}>Capitalize First Letter</button>
+          <button className="btn btn-primary mx-1 my-1" onClick={capitalizeFirst} disabled={text.length===0}>Capitalize First Letter</button>
 
           <button className="btn btn-primary mx-1 my-1" onClick={removeSpaces} disabled={text.length===0}>Remove Extra Spaces</button>
 
