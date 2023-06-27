@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/TextInsight/static/css/main.35709ac4.css",
+    "main.css": "/TextInsight/static/css/main.d8c68a8e.css",
     "main.js": "/TextInsight/static/js/main.57e02163.js",
     "static/js/787.28cb0dcd.chunk.js": "/TextInsight/static/js/787.28cb0dcd.chunk.js",
     "index.html": "/TextInsight/index.html",
-    "main.35709ac4.css.map": "/TextInsight/static/css/main.35709ac4.css.map",
+    "main.d8c68a8e.css.map": "/TextInsight/static/css/main.d8c68a8e.css.map",
     "main.57e02163.js.map": "/TextInsight/static/js/main.57e02163.js.map",
     "787.28cb0dcd.chunk.js.map": "/TextInsight/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.35709ac4.css",
+    "static/css/main.d8c68a8e.css",
     "static/js/main.57e02163.js"
   ]
 }
