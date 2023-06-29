@@ -51,24 +51,24 @@ export default function Form(props) {
    return (
 <>
 <div className="container" style={{color: props.mode ==='dark'?'white':'black'}}>        
-      <h1>{props.title}</h1>
+      <h1 className="heading my-3">{props.title}</h1>
       <div className="mb-3">
-        <textarea className="form-control"
+        <textarea className="form-control custom-form"
         placeholder="Type here..." value={text} onChange={change} id="textArea"
           rows="7" style={{backgroundColor: props.mode ==='dark'?'rgb(220, 220, 220)':'white'}}
         />
       </div>
-        <button className="btn btn-primary mx-1 my-1" onClick={uppercase} disabled={text.length===0}>Convert to UpperCase</button>
+        <button className="btn custom-btn mx-1 my-1" onClick={uppercase} disabled={text.length===0}>Convert to UpperCase</button>
 
-          <button className="btn btn-primary mx-1 my-1" onClick={lowercase} disabled={text.length===0}>Convert to LowerCase</button>
+          <button className="btn custom-btn mx-1 my-1" onClick={lowercase} disabled={text.length===0}>Convert to LowerCase</button>
 
-          <button className="btn btn-primary mx-1 my-1" onClick={capitalizeFirst} disabled={text.length===0}>Capitalize First Letter</button>
+          <button className="btn custom-btn mx-1 my-1" onClick={capitalizeFirst} disabled={text.length===0}>Capitalize First Letter</button>
 
-          <button className="btn btn-primary mx-1 my-1" onClick={removeSpaces} disabled={text.length===0}>Remove Extra Spaces</button>
+          <button className="btn custom-btn mx-1 my-1" onClick={removeSpaces} disabled={text.length===0}>Remove Extra Spaces</button>
 
-          <button className="btn btn-primary mx-1 my-1" onClick={copyText} disabled={text.length===0}>Copy Text</button> 
+          <button className="btn custom-btn mx-1 my-1" onClick={copyText} disabled={text.length===0}>Copy Text</button> 
 
-          <button className="btn btn-primary mx-1 my-1" onClick={clearText} disabled={text.length===0}>Clear</button>
+          <button className="btn custom-btn clear mx-1 my-1" onClick={clearText} disabled={text.length===0}>Clear</button>
            
       </div>
       <div className="container my-3" style={{color: props.mode === 'dark'?'white':'black'}}>
